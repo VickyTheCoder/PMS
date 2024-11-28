@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
@@ -28,13 +29,33 @@
         <label for="signup-password-confirm" class="block text-gray-600">Confirm Password</label>
         <input type="password" id="signup-password-confirm" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Confirm your password" required>
       </div>
-      <button id="signup-button" class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Sign Up</button>
+      <button id="signup-button" class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600" onclick="register_user()">Sign Up</button>
+      <button id="message" class="w-full bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600" hidden></button>
     </div>
     <p class="text-sm text-center text-gray-600 mt-4">
       Already have an account? 
-      <a href="/login" class="text-blue-500 hover:underline">Sign In</a>
+      <a href="/signup" class="text-blue-500 hover:underline">Sign In</a>
     </p>
   </div>
+  <script>
+    function register_user(){
+        var usr = $("#signup-name").val();
+        var email = $("#signup-email").val();
+        var pwd = $("#signup-password").val();
+        var cnf = $("#signup-password-confirm").val();
+        var msg = $("#message");
+
+        if ( pwd == cnf ){
+            // Ajax Call for user creation
+            // followed by login page to check 
+            // if signup was successful
+        } else {
+            msg.html("Passwords doesn't match: Try again");
+            msg.show();
+        }
+
+    }
+  </script>
 
 </body>
 </html>
