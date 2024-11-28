@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign In</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
@@ -20,13 +21,29 @@
         <label for="signin-password" class="block text-gray-600">Password</label>
         <input type="password" id="signin-password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your password" required>
       </div>
-      <button id="signin-button" class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Sign In</button>
+      <button id="signin-button" class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600" onclick="user_login()">Sign In</button>
+      <button id="message" class="w-full bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600" hidden></button>
     </div>
     <p class="text-sm text-center text-gray-600 mt-4">
       Don't have an account? 
       <a href="/signup" class="text-blue-500 hover:underline">Sign Up</a>
     </p>
   </div>
+  <script>
+    function user_login(){
+      var email = $("#signin-email").val();
+      var pwd = $("#signin-password").val();
+      var msg = $("#message");// to display if login fails
 
+      // Ajax Call for user login
+      // followed by dashboard_page
+      // if signup was successful
+
+      if ( msg == msg){// assuming login passes for the use
+        window.location.href = "{% url 'dashboard' %}"
+      }
+
+    }
+  </script>
 </body>
 </html>

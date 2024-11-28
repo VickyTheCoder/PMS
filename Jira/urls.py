@@ -23,4 +23,5 @@ urlpatterns = [
     path('', fe_views.home_page),
     path('login', fe_views.login_page, name='login'),
     path('signup', fe_views.signup_page, name='signup'),
+    path('dashboard', fe_views.dashboard_page, name='dashboard'),
 ]

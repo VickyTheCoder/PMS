@@ -18,3 +18,9 @@ def signup_page(request):
         request=request,
         template_name='signup.html'
     )
+
+def dashboard_page(request):
+    return render(
+        request=request,
+        template_name='dashboard.html'
+    )
