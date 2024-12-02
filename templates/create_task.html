@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Task</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg w-full max-w-sm md:max-w-lg">
+    <h2 class="text-xl md:text-2xl font-bold mb-4 text-center">Create A New Task</h2>
+    <div id="taskForm" class="space-y-4">
+      <!-- Task ID -->
+      <div>
+        <label for="taskId" class="block text-gray-700 text-sm">Task ID</label>
+        <input type="text" id="taskId" class="w-full p-2 border border-gray-300 rounded focus:ring focus:ring-indigo-300">
+      </div>
+      <!-- Description -->
+      <div>
+        <label for="description" class="block text-gray-700 text-sm">Description</label>
+        <textarea id="description" class="w-full p-2 border border-gray-300 rounded focus:ring focus:ring-indigo-300"></textarea>
+      </div>
+      <!-- Issue Type -->
+      <div>
+        <label for="issueType" class="block text-gray-700 text-sm">Issue Type</label>
+        <select id="issueType" class="w-full p-2 border border-gray-300 rounded focus:ring focus:ring-indigo-300">
+          <!-- <option value="Bug">Bug</option>
+          <option value="Task">Task</option> -->
+        </select>
+      </div>
+      <!-- Priority -->
+      <div>
+        <label for="priority" class="block text-gray-700 text-sm">Priority</label>
+        <select id="priority" class="w-full p-2 border border-gray-300 rounded focus:ring focus:ring-indigo-300">
+          <!-- <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option> -->
+        </select>
+      </div>
+      <!-- Status -->
+      <div>
+        <label for="status" class="block text-gray-700 text-sm">Status</label>
+        <select id="status" class="w-full p-2 border border-gray-300 rounded focus:ring focus:ring-indigo-300">
+          <!-- <option value="Open">Open</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Closed">Closed</option> -->
+        </select>
+      </div>
+      <!-- Assignee -->
+      <div>
+        <label for="assignee" class="block text-gray-700 text-sm">Assignee</label>
+        <input type="text" id="assignee" class="w-full p-2 border border-gray-300 rounded focus:ring focus:ring-indigo-300">
+      </div>
+      <!-- Reporter -->
+      <div>
+        <label for="reporter" class="block text-gray-700 text-sm">Reporter</label>
+        <input type="text" id="reporter" class="w-full p-2 border border-gray-300 rounded focus:ring focus:ring-indigo-300">
+      </div>
+      <!-- Due Date -->
+      <div>
+        <label for="dueDate" class="block text-gray-700 text-sm">Due Date</label>
+        <input type="date" id="dueDate" class="w-full p-2 border border-gray-300 rounded focus:ring focus:ring-indigo-300">
+      </div>
+      <!-- Estimation -->
+      <div>
+        <label for="estimation" class="block text-gray-700 text-sm">Estimation (hours)</label>
+        <input type="number" id="estimation" class="w-full p-2 border border-gray-300 rounded focus:ring focus:ring-indigo-300">
+      </div>
+      <!-- Comments -->
+      <div>
+        <label for="comments" class="block text-gray-700 text-sm">Comments</label>
+        <textarea id="comments" class="w-full p-2 border border-gray-300 rounded focus:ring focus:ring-indigo-300"></textarea>
+      </div>
+      <!-- Attachments -->
+      <div>
+        <label for="attachments" class="block text-gray-700 text-sm">Attachments</label>
+        <input type="file" id="attachments" multiple class="w-full p-2 border border-gray-300 rounded focus:ring focus:ring-indigo-300">
+      </div>
+      <!-- Submit Button -->
+      <button id="submitTask" class="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 focus:outline-none">
+        Create Task
+      </button>
+    </div>
+  </div>
+
+  <script>
+    
+  </script>
+
+</body>
+</html>
