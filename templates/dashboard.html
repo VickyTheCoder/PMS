@@ -1,11 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Interactive Dashboard</title>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body>
-    <strong>Under Construction</strong>
+
+<body class="bg-gray-100">
+
+    <!-- Sidebar -->
+    <div class="flex h-screen">
+        <aside class="bg-gray-800 text-white w-64 hidden md:block">
+            <div class="p-4 text-lg font-bold">Dashboard</div>
+            <ul>
+                <li class="hover:bg-gray-700 p-3">
+                    <button class="flex items-center w-full text-left focus:outline-none show-section" data-section="new-task">
+                        <span class="material-icons">add_task</span>
+                        <span class="ml-2">New Task</span>
+                    </button>
+                </li>
+                <li class="hover:bg-gray-700 p-3">
+                    <button class="flex items-center w-full text-left focus:outline-none show-section" data-section="in-progress">
+                        <span class="material-icons">hourglass_empty</span>
+                        <span class="ml-2">In Progress</span>
+                    </button>
+                </li>
+                <li class="hover:bg-gray-700 p-3">
+                    <button class="flex items-center w-full text-left focus:outline-none show-section" data-section="on-hold">
+                        <span class="material-icons">pause_circle</span>
+                        <span class="ml-2">On Hold</span>
+                    </button>
+                </li>
+                <li class="hover:bg-gray-700 p-3">
+                    <button class="flex items-center w-full text-left focus:outline-none show-section" data-section="finished">
+                        <span class="material-icons">check_circle</span>
+                        <span class="ml-2">Finished</span>
+                    </button>
+                </li>
+                <li class="hover:bg-gray-700 p-3">
+                    <button class="flex items-center w-full text-left focus:outline-none show-section" data-section="raise-concerns">
+                        <span class="material-icons">report_problem</span>
+                        <span class="ml-2">Raise Concerns</span>
+                    </button>
+                </li>
+                <li class="hover:bg-gray-700 p-3">
+                    <button class="flex items-center w-full text-left focus:outline-none show-section" data-section="raise-alarm">
+                        <span class="material-icons">warning</span>
+                        <span class="ml-2">Raise Alarm</span>
+                    </button>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main content -->
+        <div class="flex-1 flex flex-col">
+            <main class="p-4 flex-1 overflow-auto">
+                <!-- Content Sections -->
+                <div id="new-task" class="hidden">
+                    <h2 class="text-2xl font-bold mb-4">New Task</h2>
+                    <div class="flex mb-4 space-x-4">
+                        <input type="text" placeholder="Enter search text..." class="border border-gray-300 rounded px-4 py-2 flex-1" />
+                        <select class="border border-gray-300 rounded px-4 py-2">
+                            <option value="" disabled selected>Choose criteria</option>
+                        </select>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded">Search</button>
+                    </div>
+                </div>
+
+                <div id="in-progress" class="hidden">
+                    <h2 class="text-2xl font-bold mb-4">In Progress</h2>
+                    <div class="flex mb-4 space-x-4">
+                        <input type="text" placeholder="Enter search text..." class="border border-gray-300 rounded px-4 py-2 flex-1" />
+                        <select class="border border-gray-300 rounded px-4 py-2">
+                            <option value="" disabled selected>Choose criteria</option>
+                        </select>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded">Search</button>
+                    </div>
+                </div>
+
+                <div id="on-hold" class="hidden">
+                    <h2 class="text-2xl font-bold mb-4">On Hold</h2>
+                    <div class="flex mb-4 space-x-4">
+                        <input type="text" placeholder="Enter search text..." class="border border-gray-300 rounded px-4 py-2 flex-1" />
+                        <select class="border border-gray-300 rounded px-4 py-2">
+                            <option value="" disabled selected>Choose criteria</option>
+                        </select>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded">Search</button>
+                    </div>
+                </div>
+
+                <div id="finished" class="hidden">
+                    <h2 class="text-2xl font-bold mb-4">Finished</h2>
+                    <div class="flex mb-4 space-x-4">
+                        <input type="text" placeholder="Enter search text..." class="border border-gray-300 rounded px-4 py-2 flex-1" />
+                        <select class="border border-gray-300 rounded px-4 py-2">
+                            <option value="" disabled selected>Choose criteria</option>
+                        </select>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded">Search</button>
+                    </div>
+                </div>
+
+                <div id="raise-concerns" class="hidden">
+                    <h2 class="text-2xl font-bold mb-4">Raise Concerns</h2>
+                </div>
+
+                <div id="raise-alarm" class="hidden">
+                    <h2 class="text-2xl font-bold mb-4">Raise Alarm</h2>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- jQuery Script -->
+    <script>
+        $(document).ready(function () {
+            // Show appropriate section
+            $(".show-section").click(function () {
+                const sectionId = $(this).data("section");
+                $("main > div").addClass("hidden");
+                $("#" + sectionId).removeClass("hidden");
+            });
+        });
+    </script>
 </body>
+
 </html>
