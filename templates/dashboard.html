@@ -95,7 +95,7 @@
                     </div>
                 </div>
 
-                <div id="finished" class="hidden">
+                <div id="finished" class="hidden" onclick="pagination()">
                     <h2 class="text-2xl font-bold mb-4">Finished</h2>
                     <div class="flex mb-4 space-x-4">
                         <input type="text" placeholder="Enter search text..." class="border border-gray-300 rounded px-4 py-2 flex-1" />
@@ -113,10 +113,26 @@
                 <div id="raise-alarm" class="hidden">
                     <h2 class="text-2xl font-bold mb-4">Raise Alarm</h2>
                 </div>
+                <div id="pagi" class="flex flex-col w-full h-full">
+                    <!-- Table Container -->
+                    <div id="pagi-table-container" class="overflow-auto flex-grow">
+                        <table id="pagi-table" class="table-auto w-full border-collapse border border-gray-300">
+                            <thead class="bg-gray-100"></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                
+                    <!-- Pagination Controls -->
+                    <div id="pagi-controls" class="flex justify-between items-center mt-2 hidden">
+                        <button id="pagi-prev" class="bg-gray-300 text-gray-700 px-4 py-2 rounded disabled:opacity-50">Previous</button>
+                        <span id="pagi-info" class="text-gray-600"></span>
+                        <button id="pagi-next" class="bg-gray-300 text-gray-700 px-4 py-2 rounded disabled:opacity-50">Next</button>
+                    </div>
+                </div>
             </main>
         </div>
     </div>
-
+    
     <!-- jQuery Script -->
     <script>
         $(document).ready(function () {
